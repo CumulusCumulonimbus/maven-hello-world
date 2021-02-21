@@ -13,6 +13,20 @@
       <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
   </properties>
 
+  
+  <repositories>
+    <repository>
+      <id>Kepler-phone-home</id>
+      <url>https://pkgs.dev.azure.com/vjdjinn/a978b48c-2354-4d0d-af52-56fdfa95b084/_packaging/Kepler-phone-home/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
