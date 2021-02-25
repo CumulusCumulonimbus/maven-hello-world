@@ -37,38 +37,6 @@ stages:
         targetPath: '$(Pipeline.Workspace)'
         artifact: 'ET-Phone-Kepler'
         publishLocation: 'pipeline'
-    
-    # - task: DockerCompose@0
-    #   inputs:
-    #     containerregistrytype: 'Azure Container Registry'
-    #     azureSubscription: 'Alien Connection(f7b30d19-417e-4aa7-bba6-607cf2e2cd41)'
-    #     azureContainerRegistry: '{"loginServer":"et0phone0home0registy.azurecr.io", "id" : "/subscriptions/f7b30d19-417e-4aa7-bba6-607cf2e2cd41/resourceGroups/et0phone0home0rg/providers/Microsoft.ContainerRegistry/registries/et0phone0home0registy"}'
-    #     action: 'Run a Docker Compose command'
-    #     dockerComposeFile: '**/docker-compose.yml'
-    #    customCommand: 'image save <imageName>:$(Build.BuildId) -o $(Build.ArtifactStagingDirectory)/imagetest.tar'
-
+        
     - download: current
       artifact: 'ET-Phone-Kepler'
-
-    # - task: Docker@0
-    #   displayName: 'Run a Docker command'
-    #   inputs:
-    #     containerregistrytype: 'Azure Container Registry'
-    #     azureSubscription: 'Alien Connection(f7b30d19-417e-4aa7-bba6-607cf2e2cd41)'
-    #     azureContainerRegistry: '{"loginServer":"et0phone0home0registy.azurecr.io", "id" : "/subscriptions/f7b30d19-417e-4aa7-bba6-607cf2e2cd41/resourceGroups/et0phone0home0rg/providers/Microsoft.ContainerRegistry/registries/et0phone0home0registy"}'
-    #     action: 'Run a Docker command'
-    #     customCommand: 'load --input $(Pipeline.Workspace)/docker-images/imagetest.tar'
-    
-    # - task: Docker@1
-    #   displayName: 'Build the Docker image'
-    #   inputs:
-    #     containerregistrytype: 'Azure Container Registry'
-    #     azureSubscription: 'Alien Connection(f7b30d19-417e-4aa7-bba6-607cf2e2cd41)'
-    #     azureContainerRegistry: '{"loginServer":"et0phone0home0registy.azurecr.io", "id" : "/subscriptions/f7b30d19-417e-4aa7-bba6-607cf2e2cd41/resourceGroups/et0phone0home0rg/providers/Microsoft.ContainerRegistry/registries/et0phone0home0registy"}'
-    #     command: 'Build an image'
-    #     dockerFile: '**/Dockerfile'
-    #     imageName: '$(ImageName)'
-    #     includeLatestTag: true
-    #     useDefaultContext: false
-    #     buildContext: '.'
-
